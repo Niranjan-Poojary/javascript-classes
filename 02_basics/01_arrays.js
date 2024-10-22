@@ -32,6 +32,6 @@ const myn1=myArr.slice(1,4);//returns the copy of section of array
 console.log(myn1);
 console.log("B",myArr);
 
-const myn2=myArr.splice(1,4);
+const myn2=myArr.splice(1,4 );
 console.log("C",myArr);
 console.log(myn2);
