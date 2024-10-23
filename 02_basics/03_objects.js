@@ -21,8 +21,17 @@ console.log(JsUser["full name"])
 console.log(JsUser[mySym])
 
 JsUser.email = "niranjan@chatgpt.com"
-Object.freeze(JsUser)
+//Object.freeze(JsUser)//to lock the value we use freeze
 JsUser.email = "niranjan@microsoft.com"
 console.log(JsUser);
 
+
+JsUser.greeting = function(){
+    console.log("Hello js user");
+}
+JsUser.greetingTwo = function(){
+    console.log(`Hello js user, ${this.name}`);
+}
+console.log(JsUser.greeting());
+console.log(JsUser.greetingTwo());
 
