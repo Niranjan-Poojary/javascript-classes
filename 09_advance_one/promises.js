@@ -1,3 +1,4 @@
+//promise creation
 const promiseOne = new Promise(function(resolve,reject){
     //Do an async task like DB Calls, cryptography,network
     setTimeout(function(){
@@ -5,6 +6,8 @@ const promiseOne = new Promise(function(resolve,reject){
         resolve()
     },1000)
 })
+//promise consumption
+//.then connection with resolve
 promiseOne.then(function(){
     console.log("Promise consumed");
 })
@@ -25,7 +28,7 @@ const promiseThree = new Promise(function(resolve,reject){
         resolve({username:"chai",email:"chai@example.com"})
     },1000)
 })
-promiseOne.then(function(user){
+promiseThree.then(function(user){
    console.log(user);
    
 })
@@ -41,12 +44,15 @@ const promiseFour = new Promise(function(resolve,reject){
     },1000)
 })
 
-promiseFour.then((user)=>{
-console.log(user);
- return user.username;
-}).then((username)=>{
+promiseFour
+.then((user)=>{
+   console.log(user);
+   return user.username;
+})
+.then((username)=>{
    console.log(username)
-}).catch(function(error){
+})
+.catch(function(error){
     console.log(error);
     
 }).finally(()=>console.log("The promise is either resolve or rejected"))
